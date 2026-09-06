@@ -181,6 +181,15 @@
       font-size: 0.9rem;
     }
   </style>
+  /* Styling for cards when unlocked */
+.card:not(.locked) .lock-overlay {
+  display: none;
+}
+
+.card:not(.locked) {
+  border: 1px solid var(--accent);
+  transition: all 0.5s ease;
+}
 </head>
 <body>
 
@@ -278,45 +287,49 @@
     </footer>
 
   </div>
+  
+    <script>
+  // Secret key/password to unlock sections (change this to your chosen key)
+  const UNLOCK_KEY = "ashal2026";
 
-  <script>
-    function toggleAudio() {
-      const audio = document.getElementById('bg-audio');
-      const btn = document.querySelector('.music-btn');
-      if (audio.paused) {
-        audio.play();
-        btn.textContent = "Pause Soundtrack";
-        btn.style.backgroundColor = "#ff5252";
-        btn.style.color = "#fff";
-      } else {
-        audio.pause();
-        btn.textContent = "Play Soundtrack";
-        btn.style.backgroundColor = "#ffd700";
-        btn.style.color = "#2a104f";
-      }
-    }
-
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
-
-    form.addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const data = new FormData(e.target);
-      fetch(e.target.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          status.innerText = "Message sent successfully!";
-          form.reset();
-        } else {
-          status.innerText = "Error sending message. Check Formspree setup.";
+  function unlockSections() {
+    const userInput = prompt("Enter access code to unlock private sections:");
+    
+    if (userInput === UNLOCK_KEY) {
+      // Reveal all locked cards
+      const lockedCards = document.querySelectorAll('.card.locked');
+      
+      lockedCards.forEach(card => {
+        card.classList.remove('locked');
+        // Replace lock overlay with full content
+        const overlay = card.querySelector('.lock-overlay');
+        if (overlay) {
+          overlay.style.display = 'none';
         }
-      }).catch(() => {
-        status.innerText = "Error sending message.";
       });
-    });
-  </script>
+
+      alert("Sections unlocked successfully!");
+    } else if (userInput !== null) {
+      alert("Incorrect key. Please try again.");
+    }
+  }
+
+  // Audio Toggle Logic
+  function toggleAudio() {
+    const audio = document.getElementById('bg-audio');
+    const btn = document.querySelector('.music-btn');
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = "Pause Soundtrack";
+      btn.style.backgroundColor = "#ff5252";
+      btn.style.color = "#fff";
+    } else {
+      audio.pause();
+      btn.textContent = "Play Soundtrack";
+      btn.style.backgroundColor = "#ffd700";
+      btn.style.color = "#2a104f";
+    }
+  }
+</script>    
 </body>
 </html>
