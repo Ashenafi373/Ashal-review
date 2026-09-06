@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashal Review | Personal Space of Ashenafi Alemayehu</title>
+  <style>
+    :root {
+      --primary: #2a104f;
+      --secondary: #4a148c;
+      --accent: #ffd700;
+      --background: #0f0f12;
+      --card-bg: #1a1a24;
+      --text: #e1e1e1;
+      --muted: #a0a0b0;
+      --lock-color: #ff5252;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 4rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER & HERO */
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    /* MUSIC BAR */
+    .music-bar {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(156, 39, 176, 0.3);
+      border: 1px solid var(--accent);
+    }
+
+    .music-btn {
+      background-color: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .music-btn:hover {
+      background-color: #ffea00;
+      transform: scale(1.05);
+    }
+
+    /* SECTIONS & CARDS */
+    .section-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    .card-title {
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    /* LOCKED CARD STYLES */
+    .card.locked {
+      position: relative;
+      border: 1px dashed var(--lock-color);
+    }
+
+    .lock-overlay {
+      background: rgba(15, 15, 18, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 2.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lock-icon {
+      font-size: 2.5rem;
+    }
+
+    .lock-title {
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .lock-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 500px;
+    }
+
+    /* FORM STYLES */
+    textarea {
+      width: 100%;
+      height: 120px;
+      background-color: var(--background);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 1rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header>
+      <h1>Ashal Review</h1>
+      <p>The Personal Space & Reflection Journal of Ashenafi Alemayehu</p>
+    </header>
+
+    <!-- MUSIC PLAYER -->
+    <div class="music-bar">
+      <span style="color: var(--accent); font-weight: bold;">Background Melody 🎵</span>
+      <button class="music-btn" onclick="toggleAudio()">Play Soundtrack</button>
+    </div>
+    <audio id="bg-audio" loop preload="auto">
+      <source src="yanet-theme.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="section-grid">
+
+      <!-- SECTION 1: WELCOME & ABOUT ME -->
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Welcome & About Me</h2>
+          <p>Welcome to <strong>Ashal Review</strong>, an international digital space created by Ashenafi Alemayehu. This platform serves as a reflection on growth, ambition, personal stories, and deep respect for the people who shape life's journey.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 2: ATTITUDE & RESPECT FOR YAN -->
+      <div class="card">
+        <img src="photo-1.jpg" alt="Perspective & Respect" onerror="this.style.display='none';">
+        <div class="card-body">
+          <h2 class="card-title">Perspective & Respect for Yan</h2>
+          <p>Yan, ever since I first saw you last year, you held a distinct and special place in my thoughts. While initial moments were distant or shy, my feelings transformed into deep respect, admiration, and a high regard for your character.</p>
+          <p style="margin-top: 1rem;">This space is dedicated to honoring that respect and offering an open invitation to speak directly in person whenever it suits your free will.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 3: THE MOMENT I SAW HER -->
+      <div class="card">
+        <img src="photo-2.jpg" alt="First Impression" onerror="this.style.display='none';">
+        <div class="card-body">
+          <h2 class="card-title">First Impression & Lasting Memory</h2>
+          <p>Seeing you for the first time left a lasting impression—your presence, focus, and quiet strength stood out immediately. That moment remains a valued memory, representing the beginning of a genuine admiration that continues today.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 4: CONTACT & MESSAGE -->
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Leave a Message</h2>
+          <p>If you'd like to share a thought, response, or message, type it below:</p>
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+            <textarea name="message" placeholder="Write your message here..." required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+          <p id="form-status" style="margin-top: 1rem; color: var(--accent); font-weight: bold;"></p>
+        </div>
+      </div>
+
+      <!-- LOCKED SECTION 1: FUTURE PLANS & ACADEMIC STATUS -->
+      <div class="card locked">
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <div class="lock-title">Academic Journey & Future Goals</div>
+          <div class="lock-desc">Detailed reflections on academic milestones, professional ambitions, and future vision. Reserved for private access.</div>
+        </div>
+      </div>
+
+      <!-- LOCKED SECTION 2: MOTHER'S ADVICE & FAMILY -->
+      <div class="card locked">
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <div class="lock-title">Family Wisdom & Unforgettable Memories</div>
+          <div class="lock-desc">Personal stories, advice from family, cherished moments with friends, and future family dreams. Locked for private access.</div>
+        </div>
+      </div>
+
+      <!-- LOCKED SECTION 3: FUTURE WEDDING CEREMONY VISION -->
+      <div class="card locked">
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <div class="lock-title">Future Celebration Vision</div>
+          <div class="lock-desc">Thoughts and visions for future life celebrations and personal milestones. Locked for private access.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; Ashal Review | Designed by Ashenafi Alemayehu</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function toggleAudio() {
+      const audio = document.getElementById('bg-audio');
+      const btn = document.querySelector('.music-btn');
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = "Pause Soundtrack";
+        btn.style.backgroundColor = "#ff5252";
+        btn.style.color = "#fff";
+      } else {
+        audio.pause();
+        btn.textContent = "Play Soundtrack";
+        btn.style.backgroundColor = "#ffd700";
+        btn.style.color = "#2a104f";
+      }
+    }
+
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      fetch(e.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          status.innerText = "Message sent successfully!";
+          form.reset();
+        } else {
+          status.innerText = "Error sending message. Check Formspree setup.";
+        }
+      }).catch(() => {
+        status.innerText = "Error sending message.";
+      });
+    });
+  </script>
+</body>
+</html>
