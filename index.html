@@ -59,7 +59,7 @@
       font-style: italic;
     }
 
-    /* Soundtrack & Access Controls */
+    /* Control Panel */
     .control-panel {
       display: flex;
       flex-wrap: wrap;
@@ -77,6 +77,8 @@
       font-weight: bold;
       border-radius: 30px;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
     }
@@ -114,12 +116,12 @@
       margin-bottom: 0;
     }
 
-    /* Hidden Sections */
+    /* Hidden / Locked Sections */
     .locked-section {
       display: none;
     }
 
-    /* Images */
+    /* Image Grid & Gallery */
     .image-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -169,6 +171,7 @@
 </head>
 <body>
 
+  <!-- Audio Player -->
   <audio id="bg-music" loop>
     <source src="yanet-theme.mp3" type="audio/mpeg">
   </audio>
@@ -185,6 +188,7 @@
     <div class="control-panel">
       <button class="btn" onclick="toggleMusic()">🎵 Play Soundtrack</button>
       <button class="btn" onclick="unlockSections()">🔑 Unlock Private Sections</button>
+      <a href="#gallery-section" class="btn">🖼️ View Gallery</a>
     </div>
 
     <!-- MAIN CONTENT -->
@@ -214,6 +218,22 @@
         </div>
       </div>
 
+      <!-- PHOTO GALLERY SECTION -->
+      <div class="card" id="gallery-section">
+        <div class="card-body">
+          <h2 class="card-title">Photo Gallery & Highlights 🖼️</h2>
+          <p>A collection of special moments, visual memories, and quiet highlights.</p>
+          <div class="image-gallery">
+            <div class="image-card">
+              <img src="photo-1.jpg" alt="Moment 1">
+            </div>
+            <div class="image-card">
+              <img src="photo-2.jpg" alt="Moment 2">
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- LOCKED / PRIVATE SECTIONS -->
 
       <!-- SECTION 4: YANET REFLECTIONS (LOCKED) -->
@@ -225,16 +245,17 @@
         </div>
       </div>
 
-      <!-- SECTION 5: GALLERY / MEMORIES (LOCKED) -->
+      <!-- SECTION 5: PRIVATE VISUAL MOMENTS (LOCKED) -->
       <div class="card locked-section">
         <div class="card-body">
-          <h2 class="card-title">Visual Moments 📸</h2>
+          <h2 class="card-title">Private Visual Moments 📸</h2>
+          <p>Locked visual reflections reserved for deeper moments.</p>
           <div class="image-gallery">
             <div class="image-card">
-              <img src="photo-1.jpg" alt="Moment 1">
+              <img src="photo-1.jpg" alt="Private Moment 1">
             </div>
             <div class="image-card">
-              <img src="photo-2.jpg" alt="Moment 2">
+              <img src="photo-2.jpg" alt="Private Moment 2">
             </div>
           </div>
         </div>
@@ -277,7 +298,7 @@
   </div>
 
   <script>
-    // Music Toggle Script
+    // Audio Player Toggle
     function toggleMusic() {
       const music = document.getElementById("bg-music");
       const btn = event.target;
@@ -290,7 +311,7 @@
       }
     }
 
-    // Unlock Password Script
+    // Passcode Unlock Function
     function unlockSections() {
       const passcode = prompt("Enter the passcode to unlock private sections:");
       if (passcode === "ashal2026") {
