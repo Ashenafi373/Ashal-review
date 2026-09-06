@@ -135,10 +135,21 @@
       border-color: var(--accent);
     }
 
+    /* FULL PHOTO DISPLAY ENHANCEMENT */
+    .card-img-wrapper {
+      width: 100%;
+      background-color: #0d0a14;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    }
+
     .card img {
       width: 100%;
-      height: 380px;
-      object-fit: cover;
+      max-height: 520px;
+      object-fit: contain; /* Ensures full image visibility without cropping */
       display: block;
     }
 
@@ -265,7 +276,9 @@
 
       <!-- SECTION 2: DEEP REFLECTIONS ON YANET -->
       <div class="card">
-        <img src="photo-1.jpg" alt="Yan" onerror="this.style.display='none';">
+        <div class="card-img-wrapper">
+          <img src="photo-1.jpg" alt="Yan" onerror="this.parentElement.style.display='none';">
+        </div>
         <div class="card-body">
           <h2 class="card-title">My Feelings & Endless Respect for Yan</h2>
           <p>Yan, ever since I first saw you last year, you held a uniquely special place in my mind and heart. When I first noticed you, I felt an undeniable admiration—a mix of awe and a genuine spark that stayed with me long after.</p>
@@ -276,7 +289,9 @@
 
       <!-- SECTION 3: THE MEMORY & INVITATION -->
       <div class="card">
-        <img src="photo-2.jpg" alt="Memory" onerror="this.style.display='none';">
+        <div class="card-img-wrapper">
+          <img src="photo-2.jpg" alt="Memory" onerror="this.parentElement.style.display='none';">
+        </div>
         <div class="card-body">
           <h2 class="card-title">First Impression & An Open Invitation</h2>
           <p>The memory of seeing you for the very first time remains clear and unforgettable. Your presence instantly set you apart, leaving a lasting impression that time has not faded.</p>
