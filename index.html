@@ -6,14 +6,16 @@
   <title>Ashal Review | Personal Space of Ashenafi Alemayehu</title>
   <style>
     :root {
-      --primary: #2a104f;
-      --secondary: #4a148c;
+      --primary: #12072b;
+      --secondary: #32005c;
       --accent: #ffd700;
-      --background: #0f0f12;
-      --card-bg: #1a1a24;
-      --text: #e1e1e1;
-      --muted: #a0a0b0;
+      --accent-hover: #ffea00;
+      --background: #09080e;
+      --card-bg: #14121e;
+      --text: #e6e6fa;
+      --muted: #a09cb0;
       --lock-color: #ff5252;
+      --border-glow: rgba(255, 215, 0, 0.25);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,98 +24,141 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--background);
       color: var(--text);
-      line-height: 1.7;
-      padding-bottom: 4rem;
+      line-height: 1.8;
+      padding-bottom: 5rem;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* HEADER & HERO */
-    header {
+    /* HERO & WELCOME SECTION */
+    .hero {
       text-align: center;
-      padding: 4rem 1rem 2rem;
+      padding: 5rem 1rem 3rem;
+      background: radial-gradient(circle, rgba(50, 0, 92, 0.4) 0%, rgba(9, 8, 14, 1) 100%);
+      border-bottom: 1px solid var(--border-glow);
+      margin-bottom: 2.5rem;
+      border-radius: 0 0 30px 30px;
     }
 
-    header h1 {
-      font-size: 3rem;
+    .hero h1 {
+      font-size: 3.5rem;
       color: var(--accent);
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      font-weight: 800;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
     }
 
-    header p {
+    .hero .subtitle {
       color: var(--muted);
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      margin-top: 0.8rem;
+      font-style: italic;
     }
 
-    /* MUSIC BAR */
-    .music-bar {
+    .welcome-card {
+      background: linear-gradient(145deg, #1a1728, #110f19);
+      border: 1px solid var(--border-glow);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      text-align: left;
+    }
+
+    .welcome-card h2 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* CONTROL & MUSIC BAR */
+    .control-bar {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
-      padding: 1rem 1.5rem;
+      padding: 1.2rem 2rem;
       border-radius: 50px;
-      margin: 2rem 0;
+      margin: 2.5rem 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 20px rgba(156, 39, 176, 0.3);
+      flex-wrap: wrap;
+      gap: 15px;
+      box-shadow: 0 6px 25px rgba(50, 0, 92, 0.5);
       border: 1px solid var(--accent);
     }
 
-    .music-btn {
+    .btn {
       background-color: var(--accent);
       color: var(--primary);
       border: none;
-      padding: 10px 20px;
-      border-radius: 25px;
+      padding: 12px 24px;
+      border-radius: 30px;
       font-weight: bold;
       cursor: pointer;
+      font-size: 0.95rem;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
-    .music-btn:hover {
-      background-color: #ffea00;
-      transform: scale(1.05);
+    .btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
     }
 
-    /* SECTIONS & CARDS */
+    .btn-unlock {
+      background-color: #00e676;
+      color: #09080e;
+    }
+
+    /* GRID & CARDS */
     .section-grid {
       display: flex;
       flex-direction: column;
-      gap: 2.5rem;
-      margin-top: 2rem;
+      gap: 3rem;
     }
 
     .card {
       background-color: var(--card-bg);
-      border-radius: 16px;
+      border-radius: 20px;
       overflow: hidden;
-      border: 1px solid rgba(255, 215, 0, 0.15);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
     }
 
     .card img {
       width: 100%;
-      height: 350px;
+      height: 380px;
       object-fit: cover;
       display: block;
     }
 
     .card-body {
-      padding: 2rem;
+      padding: 2.5rem;
     }
 
     .card-title {
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: var(--accent);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       border-bottom: 2px solid var(--secondary);
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.6rem;
       display: inline-block;
+    }
+
+    .card-body p {
+      margin-bottom: 1.2rem;
+      color: #d1d1e0;
+      font-size: 1.08rem;
     }
 
     /* LOCKED CARD STYLES */
@@ -122,89 +167,86 @@
       border: 1px dashed var(--lock-color);
     }
 
+    .card.locked .locked-content {
+      display: none;
+    }
+
     .lock-overlay {
-      background: rgba(15, 15, 18, 0.85);
-      backdrop-filter: blur(8px);
-      padding: 2.5rem;
+      background: rgba(9, 8, 14, 0.94);
+      backdrop-filter: blur(10px);
+      padding: 3.5rem 2rem;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     .lock-icon {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
 
     .lock-title {
       color: var(--accent);
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
 
     .lock-desc {
       color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 500px;
+      font-size: 1rem;
+      max-width: 550px;
+    }
+
+    /* UNLOCKED STATE */
+    .card:not(.locked) .lock-overlay {
+      display: none;
     }
 
     /* FORM STYLES */
     textarea {
       width: 100%;
-      height: 120px;
+      height: 140px;
       background-color: var(--background);
       border: 1px solid var(--accent);
       color: var(--text);
-      border-radius: 8px;
-      padding: 1rem;
+      border-radius: 12px;
+      padding: 1.2rem;
       font-size: 1rem;
       margin-top: 1rem;
       resize: vertical;
     }
 
-    .submit-btn {
-      background-color: var(--accent);
-      color: var(--primary);
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-
     /* FOOTER */
     footer {
       text-align: center;
-      margin-top: 4rem;
+      margin-top: 5rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
   </style>
-  /* Styling for cards when unlocked */
-.card:not(.locked) .lock-overlay {
-  display: none;
-}
-
-.card:not(.locked) {
-  border: 1px solid var(--accent);
-  transition: all 0.5s ease;
-}
 </head>
 <body>
 
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <h1>Ashal Review</h1>
+      <p class="subtitle">The Official Personal Platform & Reflection Space of Ashenafi Alemayehu</p>
+
+      <div class="welcome-card">
+        <h2>Welcome to My Personal Space</h2>
+        <p>Welcome to <strong>Ashal Review</strong>—an international-style personal digital portfolio designed to record growth, personal milestones, reflections on life, and genuine appreciation for the people who make an indelible mark on my journey.</p>
+        <p>This space was created with sincerity, total honesty, and deep respect. Feel free to explore the reflections shared here.</p>
+      </div>
+    </div>
+  </section>
+
   <div class="container">
     
-    <!-- HEADER -->
-    <header>
-      <h1>Ashal Review</h1>
-      <p>The Personal Space & Reflection Journal of Ashenafi Alemayehu</p>
-    </header>
-
-    <!-- MUSIC PLAYER -->
-    <div class="music-bar">
-      <span style="color: var(--accent); font-weight: bold;">Background Melody 🎵</span>
-      <button class="music-btn" onclick="toggleAudio()">Play Soundtrack</button>
+    <!-- CONTROLS -->
+    <div class="control-bar">
+      <button class="btn" onclick="toggleAudio()">Play Soundtrack 🎵</button>
+      <button class="btn btn-unlock" onclick="unlockSections()">🔑 Unlock Secret Sections</button>
     </div>
     <audio id="bg-audio" loop preload="auto">
       <source src="yanet-theme.mp3" type="audio/mpeg">
@@ -212,52 +254,60 @@
 
     <div class="section-grid">
 
-      <!-- SECTION 1: WELCOME & ABOUT ME -->
+      <!-- SECTION 1: ABOUT ME -->
       <div class="card">
         <div class="card-body">
-          <h2 class="card-title">Welcome & About Me</h2>
-          <p>Welcome to <strong>Ashal Review</strong>, an international digital space created by Ashenafi Alemayehu. This platform serves as a reflection on growth, ambition, personal stories, and deep respect for the people who shape life's journey.</p>
+          <h2 class="card-title">About Me — Ashenafi Alemayehu</h2>
+          <p>I am someone driven by big dreams, continuous self-improvement, and an unwavering commitment to dignity and respect in all relationships. I value truthfulness, quiet strength, and long-term purpose.</p>
+          <p>Ashal Review acts as a personal journal—a place where life lessons, professional goals, and deep admiration for special individuals are preserved thoughtfully.</p>
         </div>
       </div>
 
-      <!-- SECTION 2: ATTITUDE & RESPECT FOR YAN -->
+      <!-- SECTION 2: DEEP REFLECTIONS ON YANET -->
       <div class="card">
-        <img src="photo-1.jpg" alt="Perspective & Respect" onerror="this.style.display='none';">
+        <img src="photo-1.jpg" alt="Yan" onerror="this.style.display='none';">
         <div class="card-body">
-          <h2 class="card-title">Perspective & Respect for Yan</h2>
-          <p>Yan, ever since I first saw you last year, you held a distinct and special place in my thoughts. While initial moments were distant or shy, my feelings transformed into deep respect, admiration, and a high regard for your character.</p>
-          <p style="margin-top: 1rem;">This space is dedicated to honoring that respect and offering an open invitation to speak directly in person whenever it suits your free will.</p>
+          <h2 class="card-title">My Feelings & Endless Respect for Yan</h2>
+          <p>Yan, ever since I first saw you last year, you held a uniquely special place in my mind and heart. When I first noticed you, I felt an undeniable admiration—a mix of awe and a genuine spark that stayed with me long after.</p>
+          <p>In the beginning, I was too shy and hesitant to express myself directly. While initial texting was brief and distance grew between us, those early feelings never disappeared; instead, they matured. Over time, that initial attraction transformed into something far deeper and more meaningful: an immense respect for your grace, poise, and quiet strength.</p>
+          <p>You are someone I hold in the highest regard. This platform exists to honor that respect completely—free of expectations, purely grounded in valuing who you are as a person.</p>
         </div>
       </div>
 
-      <!-- SECTION 3: THE MOMENT I SAW HER -->
+      <!-- SECTION 3: THE MEMORY & INVITATION -->
       <div class="card">
-        <img src="photo-2.jpg" alt="First Impression" onerror="this.style.display='none';">
+        <img src="photo-2.jpg" alt="Memory" onerror="this.style.display='none';">
         <div class="card-body">
-          <h2 class="card-title">First Impression & Lasting Memory</h2>
-          <p>Seeing you for the first time left a lasting impression—your presence, focus, and quiet strength stood out immediately. That moment remains a valued memory, representing the beginning of a genuine admiration that continues today.</p>
+          <h2 class="card-title">First Impression & An Open Invitation</h2>
+          <p>The memory of seeing you for the very first time remains clear and unforgettable. Your presence instantly set you apart, leaving a lasting impression that time has not faded.</p>
+          <p>I created this dedicated section to clear away any past awkwardness or silence. If it is ever within your free will, comfort, and interest, I would be honored to meet you in person—just to sit down, talk directly, and have a genuine, warm conversation without any pressure.</p>
         </div>
       </div>
 
-      <!-- SECTION 4: CONTACT & MESSAGE -->
+      <!-- SECTION 4: LEAVE A MESSAGE -->
       <div class="card">
         <div class="card-body">
-          <h2 class="card-title">Leave a Message</h2>
-          <p>If you'd like to share a thought, response, or message, type it below:</p>
+          <h2 class="card-title">Leave a Thought or Reply 💬</h2>
+          <p>Yan, if you would like to share any thoughts, leave a response, or let me know if you'd ever be open to meeting, write your message below:</p>
+          
           <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
             <textarea name="message" placeholder="Write your message here..." required></textarea>
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" class="btn" style="margin-top: 1rem;">Send Message</button>
           </form>
           <p id="form-status" style="margin-top: 1rem; color: var(--accent); font-weight: bold;"></p>
         </div>
       </div>
 
-      <!-- LOCKED SECTION 1: FUTURE PLANS & ACADEMIC STATUS -->
+      <!-- LOCKED SECTION 1: ACADEMIC STATUS & FUTURE PLANS -->
       <div class="card locked">
         <div class="lock-overlay">
           <div class="lock-icon">🔒</div>
           <div class="lock-title">Academic Journey & Future Goals</div>
           <div class="lock-desc">Detailed reflections on academic milestones, professional ambitions, and future vision. Reserved for private access.</div>
+        </div>
+        <div class="card-body locked-content">
+          <h2 class="card-title">Academic Journey & Future Goals</h2>
+          <p>My academic life is centered around strong discipline, high standards, and continuous effort. I aim to achieve excellence in my field and establish a future defined by impactful achievements, independence, and leadership.</p>
         </div>
       </div>
 
@@ -266,16 +316,24 @@
         <div class="lock-overlay">
           <div class="lock-icon">🔒</div>
           <div class="lock-title">Family Wisdom & Unforgettable Memories</div>
-          <div class="lock-desc">Personal stories, advice from family, cherished moments with friends, and future family dreams. Locked for private access.</div>
+          <div class="lock-desc">Personal stories, mother's advice, cherished moments with friends, and family values. Locked for private access.</div>
+        </div>
+        <div class="card-body locked-content">
+          <h2 class="card-title">Family Wisdom & Unforgettable Memories</h2>
+          <p>The core values that guide me come directly from my mother's wisdom: to remain humble, walk with integrity, and honor every individual with genuine respect. These principles shape my lifelong friendships and my vision for my future family.</p>
         </div>
       </div>
 
-      <!-- LOCKED SECTION 3: FUTURE WEDDING CEREMONY VISION -->
+      <!-- LOCKED SECTION 3: FUTURE WEDDING & FAMILY VISION -->
       <div class="card locked">
         <div class="lock-overlay">
           <div class="lock-icon">🔒</div>
-          <div class="lock-title">Future Celebration Vision</div>
-          <div class="lock-desc">Thoughts and visions for future life celebrations and personal milestones. Locked for private access.</div>
+          <div class="lock-title">Future Family & Celebration Vision</div>
+          <div class="lock-desc">Visions of future life celebrations, family, and personal life milestones. Locked for private access.</div>
+        </div>
+        <div class="card-body locked-content">
+          <h2 class="card-title">Future Family & Celebration Vision</h2>
+          <p>Looking ahead, I hold a warm vision for the future—a peaceful home filled with mutual respect, deep love, family, and memorable celebrations with loved ones. It represents the ultimate milestone of a life well-lived.</p>
         </div>
       </div>
 
@@ -283,53 +341,63 @@
 
     <!-- FOOTER -->
     <footer>
-      <p>&copy; Ashal Review | Designed by Ashenafi Alemayehu</p>
+      <p>&copy; Ashal Review | Designed with respect by Ashenafi Alemayehu</p>
     </footer>
 
   </div>
-  
-    <script>
-  // Secret key/password to unlock sections (change this to your chosen key)
-  const UNLOCK_KEY = "ashal2026";
 
-  function unlockSections() {
-    const userInput = prompt("Enter access code to unlock private sections:");
-    
-    if (userInput === UNLOCK_KEY) {
-      // Reveal all locked cards
-      const lockedCards = document.querySelectorAll('.card.locked');
+  <script>
+    const UNLOCK_KEY = "ashal2026";
+
+    function unlockSections() {
+      const userInput = prompt("Enter access code to unlock private sections:");
       
-      lockedCards.forEach(card => {
-        card.classList.remove('locked');
-        // Replace lock overlay with full content
-        const overlay = card.querySelector('.lock-overlay');
-        if (overlay) {
-          overlay.style.display = 'none';
+      if (userInput === UNLOCK_KEY) {
+        const lockedCards = document.querySelectorAll('.card.locked');
+        lockedCards.forEach(card => card.classList.remove('locked'));
+        alert("Private sections unlocked successfully!");
+      } else if (userInput !== null) {
+        alert("Incorrect code. Please try again.");
+      }
+    }
+
+    function toggleAudio() {
+      const audio = document.getElementById('bg-audio');
+      const btn = document.querySelector('.control-bar .btn');
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = "Pause Soundtrack";
+        btn.style.backgroundColor = "#ff5252";
+        btn.style.color = "#fff";
+      } else {
+        audio.pause();
+        btn.textContent = "Play Soundtrack 🎵";
+        btn.style.backgroundColor = "#ffd700";
+        btn.style.color = "#12072b";
+      }
+    }
+
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      fetch(e.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          status.innerText = "Thank you! Your message has been sent directly to me ✨";
+          form.reset();
+        } else {
+          status.innerText = "Error sending message. Please check Formspree setup.";
         }
+      }).catch(() => {
+        status.innerText = "Error sending message.";
       });
-
-      alert("Sections unlocked successfully!");
-    } else if (userInput !== null) {
-      alert("Incorrect key. Please try again.");
-    }
-  }
-
-  // Audio Toggle Logic
-  function toggleAudio() {
-    const audio = document.getElementById('bg-audio');
-    const btn = document.querySelector('.music-btn');
-    if (audio.paused) {
-      audio.play();
-      btn.textContent = "Pause Soundtrack";
-      btn.style.backgroundColor = "#ff5252";
-      btn.style.color = "#fff";
-    } else {
-      audio.pause();
-      btn.textContent = "Play Soundtrack";
-      btn.style.backgroundColor = "#ffd700";
-      btn.style.color = "#2a104f";
-    }
-  }
-</script>    
+    });
+  </script>
 </body>
 </html>
