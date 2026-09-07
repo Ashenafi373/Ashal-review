@@ -101,6 +101,8 @@
       font-size: 0.95rem;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-decoration: none;
+      display: inline-block;
     }
 
     .btn:hover {
@@ -211,17 +213,27 @@
     }
 
     /* FORM STYLES */
-    textarea {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 1rem;
+    }
+
+    input, textarea {
       width: 100%;
-      height: 140px;
       background-color: var(--background);
       border: 1px solid var(--accent);
       color: var(--text);
       border-radius: 12px;
-      padding: 1.2rem;
+      padding: 1rem;
       font-size: 1rem;
-      margin-top: 1rem;
+      font-family: inherit;
+    }
+
+    textarea {
       resize: vertical;
+      min-height: 140px;
     }
 
     /* FOOTER */
@@ -266,7 +278,7 @@
         <div class="card-body">
           <h2 class="card-title">About Me — Ashenafi Alemayehu</h2>
           <p>I am a 3rd year medical student with PC2 coming soon.</p>
-          <p>At home, I am the firstborn child in a family with 3 sisters and 1 brother.I have an ambivert personality .</p>
+          <p>At home, I am the firstborn child in a family with 3 sisters and 1 brother. I have an ambivert personality.</p>
         </div>
       </div>
 
@@ -274,7 +286,7 @@
       <div class="card">
         <div class="card-body">
           <h2 class="card-title">Spiritual Foundations</h2>
-          <p>My faith gives me inner strength and peace during stressful times. </p>
+          <p>My faith gives me inner strength and peace during stressful times.</p>
         </div>
       </div>
 
@@ -310,14 +322,28 @@
         </div>
       </div>
 
-      <!-- SECTION 6: LEAVE A MESSAGE -->
+      <!-- SECTION 6: LEAVE A MESSAGE & REQUEST -->
       <div class="card">
         <div class="card-body">
           <h2 class="card-title">Leave a Thought or Reply 💬</h2>
           <p>Yan, if you ever feel like leaving a note or replying, you can type your message right here:</p>
           
-          <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
-            <textarea name="message" placeholder="Type your message..." required></textarea>
+          <div style="background: rgba(255, 215, 0, 0.05); border: 1px dashed var(--accent); padding: 1.2rem; border-radius: 12px; margin: 1.2rem 0; text-align: center;">
+            <p style="color: var(--accent); font-weight: bold; margin-bottom: 0.4rem;">📸 A Small Request</p>
+            <p style="font-size: 0.98rem; color: #d1d1e0; margin-bottom: 0;">If you feel like sharing a piece of your world, I’d love to see your absolute favorite picture or memory. Also, if you're open to it, feel free to drop your phone number below so we can stay in touch easily.</p>
+          </div>
+
+          <form id="contact-form" action="https://formspree.io/f/mnpqbkoy" method="POST">
+            <div style="margin-bottom: 0.5rem;">
+              <label for="phone" style="display: block; color: var(--accent); margin-bottom: 0.4rem; font-size: 0.95rem;">Phone Number (Optional):</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number...">
+            </div>
+
+            <div>
+              <label for="message" style="display: block; color: var(--accent); margin-bottom: 0.4rem; font-size: 0.95rem;">Your Message / Favorite Picture Link:</label>
+              <textarea id="message" name="message" placeholder="Type your message or share a link to your favorite picture..." required></textarea>
+            </div>
+
             <button type="submit" class="btn" style="margin-top: 1rem;">Send Message</button>
           </form>
           <p id="form-status" style="margin-top: 1rem; color: var(--accent); font-weight: bold;"></p>
