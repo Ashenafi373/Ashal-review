@@ -23,6 +23,27 @@
 
 /* Page Body: Deep, atmospheric gradient with smooth scrolling */
 body {
+  <!-- Fullscreen Login Modal -->
+<div id="auth-modal" class="auth-overlay">
+  <div class="auth-card">
+    <h2>Welcome</h2>
+    <p>Please enter your credentials to access this page.</p>
+    
+    <div class="auth-field">
+      <label for="auth-username">Name</label>
+      <input type="text" id="auth-username" placeholder="Enter your name" required>
+    </div>
+    
+    <div class="auth-field">
+      <label for="auth-password">Password</label>
+      <input type="password" id="auth-password" placeholder="Enter password" required>
+    </div>
+    
+    <button id="auth-btn" onclick="checkAuth()">Enter</button>
+    <p id="auth-error" class="auth-error"></p>
+  </div>
+</div>
+    
   background: var(--bg-deep) var(--bg-gradient) fixed !important;
   color: var(--text-reading) !important;
   font-family: 'Georgia', 'Cambria', serif; /* Soft, warm serif font for reading */
