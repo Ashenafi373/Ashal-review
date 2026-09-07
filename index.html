@@ -6,6 +6,87 @@
   <title>Ashal Review</title>
   
   <style>
+    :root {
+  /* Warm Midnight & Velvet Palette */
+  --bg-deep: #0f0a15;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #1e102a 0%, #0f0a15 70%);
+  --card-glow: rgba(45, 20, 50, 0.4);
+  --card-bg: rgba(22, 14, 32, 0.75);
+  --card-border: rgba(236, 178, 206, 0.15);
+  
+  /* Soft, Romantic Accent Colors */
+  --rose-gold: #f472b6;
+  --soft-gold: #fde047;
+  --text-primary: #fdf8f6;
+  --text-reading: #e2d9f3;
+}
+
+/* Page Body: Deep, atmospheric gradient with smooth scrolling */
+body {
+  background: var(--bg-deep) var(--bg-gradient) fixed !important;
+  color: var(--text-reading) !important;
+  font-family: 'Georgia', 'Cambria', serif; /* Soft, warm serif font for reading */
+  line-height: 1.75;
+  letter-spacing: 0.015em;
+  min-height: 100vh;
+}
+
+/* Romantic Card Container: Floating glass effect with a subtle rose glow */
+.card, 
+div[class*="card"] {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6),
+              0 0 20px var(--card-glow) !important;
+  border-radius: 16px !important;
+  color: var(--text-primary) !important;
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle lift effect on hover */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7),
+              0 0 25px rgba(244, 114, 182, 0.25) !important;
+}
+
+/* Headings: Warm rose gold accent */
+h1, h2, h3, h4, .card-title {
+  color: var(--rose-gold) !important;
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Inner elements, labels & inputs */
+.card div, .card label {
+  background: transparent !important;
+  color: var(--text-reading) !important;
+}
+
+input[type="text"], textarea, .search-input {
+  background: rgba(15, 10, 21, 0.6) !important;
+  border: 1px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+  border-radius: 8px !important;
+  padding: 10px 14px;
+}
+
+input:focus, textarea:focus {
+  outline: none !important;
+  border-color: var(--rose-gold) !important;
+  box-shadow: 0 0 10px rgba(244, 114, 182, 0.3) !important;
+}
+
+/* Locked Overlays: Atmospheric blur */
+.locked, .lock-overlay {
+  background: rgba(15, 10, 21, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  color: var(--text-reading) !important;
+}
     /* Paste CSS Feature 1: Animated Ambient Background Glow */
     body::before {
       content: '';
