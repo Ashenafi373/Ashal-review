@@ -951,6 +951,152 @@
           <p id="form-status" style="margin-top: 1rem; color: var(--accent); font-weight: bold;"></p>
         </div>
       </div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #0284c7;
+      --text-main: #334155;
+      --bg-card: #ffffff;
+      --bg-page: #f8fafc;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    li strong {
+      color: #0f172a;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .badge {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- About Project Section -->
+    <section class="card">
+      <h2>About Project</h2>
+      <p><strong>Project Purpose:</strong> Developed to simplify access to critical study resources, lecture summaries, and rotation materials specifically tailored for medical students.</p>
+      
+      <p><strong>Core Objectives:</strong></p>
+      <ul>
+        <li>Centralize distribution of academic notes, schedules, and clinical guides.</li>
+        <li>Streamline communication between batch representatives and students.</li>
+        <li>Reduce time spent searching for reliable study materials during clinical rotations.</li>
+        <li>Provide a fast, accessible platform optimized for low-bandwidth mobile environments.</li>
+      </ul>
+      
+      <p style="margin-top: 1rem; margin-bottom: 0;">
+        <strong>Target Audience:</strong> Dire Dawa University medical students (specifically 6th batch clinical students and junior rotators).
+      </p>
+    </section>
+
+    <!-- Languages & Tools Used Section -->
+    <section class="card">
+      <h2>Languages & Tools Used</h2>
+      <ul>
+        <li>
+          <strong>Frontend / Interface:</strong> HTML5, CSS3, JavaScript (ES6+)
+          <div class="badge-group">
+            <span class="badge">HTML5</span>
+            <span class="badge">CSS3</span>
+            <span class="badge">JavaScript</span>
+          </div>
+        </li>
+        <li style="margin-top: 1rem;">
+          <strong>Backend & Storage:</strong> JSON, LocalStorage
+          <div class="badge-group">
+            <span class="badge">JSON</span>
+            <span class="badge">LocalStorage</span>
+          </div>
+        </li>
+        <li style="margin-top: 1rem;">
+          <strong>Design & Media:</strong> Canva, Photoshop
+          <div class="badge-group">
+            <span class="badge">Canva</span>
+            <span class="badge">Photoshop</span>
+          </div>
+        </li>
+        <li style="margin-top: 1rem;">
+          <strong>Version Control & Hosting:</strong> Git, GitHub
+          <div class="badge-group">
+            <span class="badge">Git</span>
+            <span class="badge">GitHub</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+
+</body>
+</html>
          <!-- FOOTER -->
     <footer>
       <p>&copy; Ashal Review | Ashenafi Alemayehu</p>
