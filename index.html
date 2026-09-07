@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <head>
+  <meta charset="UTF-8" />
+  <title>Ashal Review</title>
+  
+  <style>
+    /* Paste CSS Feature 1: Animated Ambient Background Glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.15), rgba(129, 140, 248, 0.1) 40%, transparent 70%);
+      z-index: -1;
+      animation: pulseGlow 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.1) translate(-2%, 2%); }
+    }
+
+    /* Paste CSS Feature 3: Card Hover Elevation & Glow */
+    .card {
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(244, 63, 94, 0.2);
+      border-color: rgba(244, 63, 94, 0.5) !important;
+    }
+  </style>
+</head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ashal Review | Ashenafi Alemayehu</title>
@@ -715,6 +750,23 @@
   </div>
 
 </div>
+<body>
+  <main class="container">
+    
+    <!-- About Me Section -->
+    <div id="about" class="card">
+      <!-- Your About Me Code -->
+    </div>
+
+    <!-- PASTE HERE: Dynamic Quote Card -->
+    <div class="card" style="background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(244, 63, 94, 0.3); border-radius: 16px; padding: 1.5rem; text-align: center; margin: 1.5rem 0;">
+      <p style="color: #fecdd3; font-size: 1.05rem; font-style: italic; margin: 0 0 0.5rem 0;">
+        "Purpose is not found in standing out, but in standing firm in what truly matters."
+      </p>
+      <span style="color: #94a3b8; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">— Personal Motto</span>
+    </div>
+
+  </main>
          <!-- FOOTER -->
     <footer>
       <p>&copy; Ashal Review | Ashenafi Alemayehu</p>
